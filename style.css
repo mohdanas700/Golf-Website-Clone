@@ -12,6 +12,25 @@ html, body{
     height: 100%;
 }
 
+#cursor{
+    height: 25px;
+    width: 25px;
+    background-color: #95C11E;
+    border-radius: 50%; /* border radius will make the cursor round */
+    position: fixed;
+    z-index: 99;  /* By this line(z-index) cursor will align at to left corner of the website,befor applying this line the cursor is in the top left corner of the url bar  */
+}
+
+#cursor-blur{
+    height: 500px;
+    width: 500px;
+    background-color: rgba(150, 193, 30,0.157);
+    border-radius: 50%; /* border radius will make the cursor round */
+    position: fixed;
+    filter: blur(30px);
+    z-index: 9;
+}
+
 #nav {
     height: 145px;
     width: 100%;
@@ -57,6 +76,7 @@ video {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    z-index: 10;    
 }
 
 #page1 h1 {
@@ -93,3 +113,57 @@ video {
     width: 100%;
 }
 
+#page1 p {
+    font-size: 22px;
+    font-weight: 500;
+    width: 40%;
+}
+
+#page2 {
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller {
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: auto; /* Overflow is used bec elements are gone out of the screen */
+    overflow-y: hidden;    
+}
+
+#scroller-in-1 {
+    display: inline;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 10s;
+}
+
+#scroller-in-2 {
+    display: inline;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 10s;
+}
+
+#scroller h4 {
+    display: inline;
+    white-space: nowrap;
+    font-size: 140px;
+    width: 900;
+    color: transparent;
+    font-family: gilroy;
+    margin: 10px;
+    -webkit-text-stroke: 2px #95C11E;
+} 
+
+
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
