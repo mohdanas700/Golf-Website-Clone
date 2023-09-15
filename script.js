@@ -69,7 +69,7 @@ gsap.from(".card", {
     scale:0.8,
     opacity:0,
     duration:1,
-    stagger:0.1 //  By stagger elements will appears one by one
+    stagger:0.1, //  By stagger elements will appears one by one
     scrollTrigger: {
         trigger : '.card' ,// this line indicates which element we want to animate
         scroller:"body",     // this line indicates where our animation should take place (body or html tag)
