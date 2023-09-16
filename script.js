@@ -1,27 +1,38 @@
-let crsr = document.querySelector("#cursor")
-let blur = document.querySelector("#cursor-blur")
+var crsr = document.querySelector("#cursor")
+var blur = document.querySelector("#cursor-blur")
 
 
 document.addEventListener("mousemove",function(dets){
-    crsr.style.left = dets.x + "px"
-    crsr.style.top = dets.y + "px"
-    blur.style.left = dets.x-250 + "px" // In this line only left corner of this cursor with original cursor so for making this cursor on conter of the orginal we minus the value with half of its width
-    blur.style.top = dets.y-250 + "px"
+    crsr.style.left = dets.x + "px";
+    crsr.style.top = dets.y + "px";
+    blur.style.left = dets.x - 250 + "px"; // In this line only left corner of this cursor with original cursor so for making this cursor on conter of the orginal we minus the value with half of its width
+    blur.style.top = dets.y - 250 + "px";
 })
 
-let h4all = document.querySelectorAll("#nav h4")
+const h4all = document.querySelectorAll("#nav h4")
 h4all.forEach(function(elem) {
     elem.addEventListener("mouseenter",function(){
-        crsr.style.scale = 2;
+        crsr.style.scale = 3;
         crsr.style.border = "1px solid #fff";
         crsr.style.backgroundColor = "transparent";
     })
     elem.addEventListener("mouseleave",function() {
         crsr.style.scale = 1;
-        crrs.style.border = "0px solid #95C11E";
-        crrs.style.background = "#95C11E";
+        crsr.style.border = "0px solid #95C11E";
+        crsr.style.background = "#95C11E";
     })
 })
+
+// let otherElements = document.querySelectorAll("#main, #scroller, #about-us, .card, #green-div, #page3, #page4, #footer")
+
+// otherElements.forEach(function(elem) {
+//     elem.addEventListener("mouseenter", function() {
+//         crsr.style.transform = "scale(1)";
+//         crsr.style.border = "0px solid #95C11E";
+//         crsr.style.background = "#95C11E";
+//     })
+// })
+
 
 gsap.to("#nav",{
     backgroundColor: "#000",
@@ -67,7 +78,7 @@ gsap.from("#about-us img,#about-us-in", {
 
 gsap.from(".card", {
     scale:0.8,
-    opacity:0,
+    // opacity:0,
     duration:1,
     stagger:0.1, //  By stagger elements will appears one by one
     scrollTrigger: {
@@ -97,7 +108,7 @@ gsap.from("#colon2",{
     y:70,
     x:70,
     scrollTrigger:{
-        trigger:"#colon2",
+        trigger:"#colon1",
         scroller:"body",
         // markers:true,
         start:"top 55%",
